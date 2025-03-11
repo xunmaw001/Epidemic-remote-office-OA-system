@@ -1,0 +1,36 @@
+package com.entity.view;
+
+import com.entity.ShebeishenqingxinxiEntity;
+
+import com.baomidou.mybatisplus.annotations.TableName;
+import org.apache.commons.beanutils.BeanUtils;
+import java.lang.reflect.InvocationTargetException;
+
+import java.io.Serializable;
+ 
+
+/**
+ * 设备申请信息
+ * 后端返回视图实体辅助类   
+ * （通常后端关联的表或者自定义的字段需要返回使用）
+ * @author 
+ * @email 
+ * @date 2020-09-29 12:26:12
+ */
+@TableName("shebeishenqingxinxi")
+public class ShebeishenqingxinxiView  extends ShebeishenqingxinxiEntity implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	public ShebeishenqingxinxiView(){
+	}
+ 
+ 	public ShebeishenqingxinxiView(ShebeishenqingxinxiEntity shebeishenqingxinxiEntity){
+ 	try {
+			BeanUtils.copyProperties(this, shebeishenqingxinxiEntity);
+		} catch (IllegalAccessException | InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 		
+	}
+}
